@@ -1,10 +1,7 @@
 import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
 
-export interface IFlexProps
+export interface IStackProps
 	extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-	mode: 'center'
-	type: 'row' | 'column'
-	spacing?: 0.5 | 1 | 2 | 3 | 4 | 5
+	spacing: number
 	children: ReactNode
-	wrap?: boolean
 }

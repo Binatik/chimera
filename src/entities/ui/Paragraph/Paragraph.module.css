@@ -1,0 +1,17 @@
+.primary {
+	color: var(--primary-color);
+	line-height: 1.2;
+}
+
+.secondary {
+	color: var(--secondary-color);
+	line-height: 1.2;
+}
+
+.small {
+	font-size: 12px;
+}
+
+.medium {
+	font-size: 16px;
+}
