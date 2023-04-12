@@ -1,0 +1,27 @@
+* {
+	box-sizing: border-box;
+	user-select: none;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+
+	background: var(--window);
+
+	font-family: 'Roboto', sans-serif;
+	font-size: 0.869rem;
+}
+
+:root {
+	--white-color: #fff;
+	--dark-color: #000;
+	--primary-color: #31235c;
+	--secondary-color: #aca7bb;
+	/* --grey: #e5e5e5;
+	--white: #fff;
+	--window: #f0f0f0;
+	--dark: #212329;
+	--inline-color: #d91f27; */
+}
