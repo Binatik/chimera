@@ -1,0 +1,12 @@
+.container {
+	margin: 0 auto;
+	padding: 10px;
+}
+
+.small {
+	max-width: 768px;
+}
+
+.round > * {
+	border-radius: 15px;
+}

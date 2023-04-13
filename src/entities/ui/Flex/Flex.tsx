@@ -3,14 +3,6 @@ import styles from './Flex.module.css'
 import classNames from 'classnames'
 
 function Flex({ mode, wrap, type, spacing, children, className, ...props }: IFlexProps) {
-	// const jsxStyles = {
-	// 	stackContainer: {
-	// 	  '> *': {
-	// 		marginBottom: '8px',
-	// 	  },
-	// 	},
-	//   };
-
 	return (
 		<div
 			{...props}

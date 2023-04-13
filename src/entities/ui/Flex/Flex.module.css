@@ -1,6 +1,6 @@
 .type {
 	display: flex;
-	margin-bottom: 1rem;
+	padding: 0 15px;
 }
 
 .mt_05 > * {

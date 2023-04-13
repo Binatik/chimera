@@ -1,12 +1,15 @@
-import { Flex, Heading, Stack } from '../entities/ui'
+import { Button, Container, Flex, Heading, Paragraph } from '../entities/ui'
 import chimera from '../assets/chimera.png'
-import { Paragraph } from '../entities/ui/Paragraph/Paragraph'
 
 function Chimera() {
 	return (
 		<>
 			<Flex
-				style={{ borderBottom: '1px solid #efedf6' }}
+				style={{
+					borderBottom: '1px solid #efedf6',
+					paddingBottom: '1rem',
+					marginBottom: '1rem',
+				}}
 				mode="center"
 				type="column"
 				spacing={0.5}>
@@ -21,6 +24,28 @@ function Chimera() {
 					Мы только открыли клан, скоро все будет. Помоги создать легенду!
 				</Paragraph>
 			</Flex>
+			<Container mode="round" size="small">
+				<Flex
+					style={{ backgroundColor: 'var(--primary-color)', paddingBottom: '1.5rem' }}
+					mode="center"
+					type="row">
+					<Button
+						onClick={() => alert('Мы работаем над этой вкладкой!')}
+						appearance="primary">
+						Акции
+					</Button>
+					<Button
+						onClick={() => alert('Мы работаем над этой вкладкой!')}
+						appearance="primary">
+						Участники
+					</Button>
+					<Button
+						onClick={() => alert('Мы работаем над этой вкладкой!')}
+						appearance="primary">
+						Критерии отбора
+					</Button>
+				</Flex>
+			</Container>
 		</>
 	)
 }
