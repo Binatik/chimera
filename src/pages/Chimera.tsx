@@ -1,7 +1,18 @@
-import { Button, Container, Flex, Heading, Paragraph } from '../entities/ui'
+import { Container, Flex, Heading, Paragraph } from '../entities/ui'
 import chimera from '../assets/chimera.png'
+import { type ITab } from '../widget/components/Tabs/Tabs.props'
+import { Tabs } from '../widget/components'
+import { useState } from 'react'
+
+const tabs: ITab[] = [
+	{ id: 1, title: 'Акции', picture: 'picture1.png' },
+	{ id: 2, title: 'Участники', picture: 'picture2.png' },
+	{ id: 3, title: 'Критерии отбора', picture: 'picture2.png' },
+]
 
 function Chimera() {
+	const [tabId, setTabId] = useState(1)
+	console.log(tabId)
 	return (
 		<>
 			<Flex
@@ -29,21 +40,7 @@ function Chimera() {
 					style={{ backgroundColor: 'var(--primary-color)', paddingBottom: '1.5rem' }}
 					mode="center"
 					type="row">
-					<Button
-						onClick={() => alert('Мы работаем над этой вкладкой!')}
-						appearance="primary">
-						Акции
-					</Button>
-					<Button
-						onClick={() => alert('Мы работаем над этой вкладкой!')}
-						appearance="primary">
-						Участники
-					</Button>
-					<Button
-						onClick={() => alert('Мы работаем над этой вкладкой!')}
-						appearance="primary">
-						Критерии отбора
-					</Button>
+					<Tabs tabId={tabId} appearance="primary" tabs={tabs} setTabId={setTabId} />
 				</Flex>
 			</Container>
 		</>

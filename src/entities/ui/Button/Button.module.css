@@ -4,16 +4,25 @@
 	font-size: 16px;
 	background: none;
 	border: none;
-	transition: background 0.2s;
+	transition: background 0.1s;
 }
 
 .primary {
 	color: var(--white-color);
 	padding: 50px 15px 10px 15px;
-	border-radius: 10px 100px / 120px;
+	margin-right: 3px;
+	border-radius: 0 0 15px 15px;
+}
+
+.primary:last-child {
+	margin: 0;
 }
 
 .primary:hover {
 	background: var(--inline-color);
-	padding: 50px 15px 10px 15px;
+}
+
+.button.active {
+	cursor: default;
+	background: var(--inline-color);
 }
