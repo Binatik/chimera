@@ -2,14 +2,14 @@ import { useState } from 'react'
 import { Button } from '../../../entities/ui'
 import { type ITabsProps } from './Tabs.props'
 
-function Tabs({ tabs, setTabId, tabId, ...props }: ITabsProps) {
+function Tabs({ tabList, tabId, setTabId, ...props }: ITabsProps) {
 	function toggleTab(toggleTabId: number) {
 		if (toggleTabId === tabId) return
 		setTabId(toggleTabId)
 	}
 	return (
 		<>
-			{tabs.map((tab, index) => (
+			{tabList.map((tab, index) => (
 				<Button
 					{...props}
 					active={index + 1 == tabId}

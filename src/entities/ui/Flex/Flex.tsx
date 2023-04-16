@@ -2,22 +2,29 @@ import { type IFlexProps } from './Flex.props'
 import styles from './Flex.module.css'
 import classNames from 'classnames'
 
-function Flex({ mode, wrap, type, spacing, children, className, ...props }: IFlexProps) {
+function Flex({
+	position,
+	settingsRound,
+	isWrap,
+	orientation,
+	spacing,
+	isStretch,
+	children,
+	className,
+	...props
+}: IFlexProps) {
 	return (
 		<div
 			{...props}
-			className={classNames(styles.type, className, {
-				[styles.center]: mode === 'center',
-				[styles.row]: type === 'row',
-				[styles.column]: type === 'column',
-				[styles.wrap]: wrap,
-				// ==============
-				[styles.mt_05]: spacing === 0.5,
-				[styles.mt_1]: spacing === 1,
-				[styles.mt_2]: spacing === 2,
-				[styles.mt_3]: spacing === 3,
-				[styles.mt_4]: spacing === 4,
-				[styles.mt_5]: spacing === 5,
+			style={{ ...props.style, gap: `${spacing}rem` }}
+			className={classNames(styles.flex, className, {
+				[styles.position_center]: position === 'center',
+				[styles.orientation_row]: orientation === 'row',
+				[styles.orientation_column]: orientation === 'column',
+				[styles.flex_wrap]: isWrap,
+				[styles.stretch]: isStretch,
+				[styles.round]: settingsRound?.isRoundChildren,
+				[styles.round_medium]: settingsRound?.round === 'medium',
 			})}>
 			{children}
 		</div>

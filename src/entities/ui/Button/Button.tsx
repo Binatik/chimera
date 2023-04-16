@@ -8,8 +8,8 @@ function Button({ appearance, active, className, children, ...props }: IButtonPr
 			{...props}
 			type="button"
 			className={classNames(styles.button, className, {
-				[styles.primary]: appearance === 'primary',
-				[styles.active]: active,
+				[styles.button_primary]: appearance === 'primary',
+				[styles.button_active]: active,
 			})}>
 			{children}
 		</button>

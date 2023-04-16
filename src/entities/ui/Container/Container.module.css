@@ -3,10 +3,14 @@
 	padding: 10px;
 }
 
-.small {
+.container_small {
 	max-width: 768px;
 }
 
-.round > * {
+.round.round_medium > * {
+	border-radius: 15px;
+}
+
+.round_medium {
 	border-radius: 15px;
 }

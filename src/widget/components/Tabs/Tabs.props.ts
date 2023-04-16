@@ -1,11 +1,7 @@
-export interface ITab {
-	id: number
-	title: string
-	picture?: string
-}
+import type { ITab } from '../../../app/types'
 
 export interface ITabsProps {
-	tabs: ITab[]
+	tabList: ITab[]
 	appearance: 'primary'
 	tabId: number
 	setTabId: React.Dispatch<React.SetStateAction<number>>

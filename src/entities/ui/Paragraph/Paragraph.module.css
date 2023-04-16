@@ -3,15 +3,15 @@
 	line-height: 1.2;
 }
 
-.secondary {
+.paragraph_secondary {
 	color: var(--secondary-color);
 	line-height: 1.2;
 }
 
-.small {
+.paragraph_small {
 	font-size: 12px;
 }
 
-.medium {
+.paragraph_medium {
 	font-size: 16px;
 }

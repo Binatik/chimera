@@ -1,10 +1,13 @@
 import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
+import type { ISettingsRound } from '../../../app/types'
 
 export interface IFlexProps
 	extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-	mode: 'center'
-	type: 'row' | 'column'
-	spacing?: 0.5 | 1 | 2 | 3 | 4 | 5
+	position: 'center'
+	orientation: 'row' | 'column'
 	children: ReactNode
-	wrap?: boolean
+	settingsRound?: ISettingsRound
+	spacing?: number
+	isStretch?: boolean
+	isWrap?: boolean
 }
