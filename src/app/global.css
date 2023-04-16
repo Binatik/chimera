@@ -9,7 +9,8 @@ body {
 
 	background: var(--window);
 
-	font-family: 'Schibsted Grotesk', sans-serif;
+	font-weight: 400;
+	font-family: 'Chivo Mono', monospace;
 	font-size: 0.869rem;
 }
 
@@ -19,9 +20,7 @@ body {
 	--primary-color: #31235c;
 	--secondary-color: #aca7bb;
 	--inline-color: #713edd;
-	/* --grey: #e5e5e5;
-	--white: #fff;
-	--window: #f0f0f0;
-	--dark: #212329;
-	--inline-color: #d91f27; */
+
+	--container-small: 762px;
+	--container-big: 999px;
 }

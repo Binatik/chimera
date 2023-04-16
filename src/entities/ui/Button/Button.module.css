@@ -8,6 +8,7 @@
 }
 
 .button_primary {
+	font-weight: 600;
 	color: var(--white-color);
 	padding: 50px 15px 20px 15px;
 	margin-right: 3px;
@@ -22,7 +23,7 @@
 	background: var(--inline-color);
 }
 
-.button.button_active {
+.button.button_disabled {
 	cursor: default;
 	background: var(--inline-color);
 	box-shadow: 0px 10px 50px -13px rgba(110, 63, 255, 1),

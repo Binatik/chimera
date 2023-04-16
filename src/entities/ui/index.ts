@@ -1,5 +1,3 @@
 export * from './Heading/Heading'
-export * from './Flex/Flex'
-export * from './Container/Container'
 export * from './Paragraph/Paragraph'
 export * from './Button/Button'

@@ -12,7 +12,7 @@ function Tabs({ tabList, tabId, setTabId, ...props }: ITabsProps) {
 			{tabList.map((tab, index) => (
 				<Button
 					{...props}
-					active={index + 1 == tabId}
+					disabled={index + 1 == tabId}
 					key={tab.id}
 					onClick={() => toggleTab(index + 1)}>
 					{tab.title}
