@@ -1,4 +1,4 @@
-import { Heading, Paragraph } from '../../entities/ui'
+import { FlexGrid, Heading, Paragraph } from '../../entities/ui'
 import chimera from '../../assets/chimera.png'
 import type { ITab } from '../../app/types'
 import { Tabs } from '../../widget/components'
@@ -27,6 +27,7 @@ function Chimera() {
 			<section className={classNames(styles.tabbed_container)}>
 				<div className={classNames(styles.tabbed_menu)}>
 					<Tabs
+						className={styles.tabbed_item}
 						appearance="primary"
 						tabId={tabIdMenu}
 						tabList={tabList}

@@ -1,23 +1,25 @@
 import { useState } from 'react'
-import { Button } from '../../../entities/ui'
+import { Button, FlexGrid } from '../../../entities/ui'
 import { type ITabsProps } from './Tabs.props'
 
-function Tabs({ tabList, tabId, setTabId, ...props }: ITabsProps) {
+function Tabs({ tabList, tabId, className, setTabId, ...props }: ITabsProps) {
 	function toggleTab(toggleTabId: number) {
 		if (toggleTabId === tabId) return
 		setTabId(toggleTabId)
 	}
 	return (
 		<>
-			{tabList.map((tab, index) => (
-				<Button
-					{...props}
-					disabled={index + 1 == tabId}
-					key={tab.id}
-					onClick={() => toggleTab(index + 1)}>
-					{tab.title}
-				</Button>
-			))}
+			<FlexGrid className={className} columnCount={tabList.length} childrenFill={false}>
+				{tabList.map((tab, index) => (
+					<Button
+						{...props}
+						disabled={index + 1 == tabId}
+						key={tab.id}
+						onClick={() => toggleTab(index + 1)}>
+						{tab.title}
+					</Button>
+				))}
+			</FlexGrid>
 		</>
 	)
 }

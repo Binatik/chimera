@@ -20,13 +20,14 @@
 }
 
 .tabbed_menu {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
 	background-color: var(--primary-color);
 	padding: 0 1rem 5rem;
 	border-radius: 15px;
+}
+
+.tabbed_item {
+	justify-content: center;
+	align-items: center;
 }
 
 .tabbed_content {
