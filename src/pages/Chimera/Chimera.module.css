@@ -31,7 +31,10 @@
 }
 
 .tabbed_content {
-	margin-top: 1rem;
+	margin-top: 3rem;
+}
+
+.content_item {
 	display: flex;
 	justify-content: center;
 	align-items: center;

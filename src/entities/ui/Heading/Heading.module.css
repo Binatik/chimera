@@ -1,6 +1,13 @@
-.h1 {
+.tag {
 	color: var(--primary-color);
 	font-weight: 700;
-	font-size: 18px;
-	line-height: 1.2;
+	line-height: 1.1;
+}
+
+.tag_small {
+	font-size: 1.3rem;
+}
+
+.tag_medium {
+	font-size: 1.8rem;
 }

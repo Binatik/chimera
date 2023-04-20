@@ -1,7 +1,7 @@
 import { FlexGrid, Heading, Paragraph } from '../../entities/ui'
 import chimera from '../../assets/chimera.png'
 import type { ITab } from '../../app/types'
-import { Tabs } from '../../widget/components'
+import { Countdown, Tabs } from '../../widget/components'
 import { useState } from 'react'
 import { Switchboard } from '../../features/components'
 import classNames from 'classnames'
@@ -19,7 +19,9 @@ function Chimera() {
 		<>
 			<div className={classNames(styles.header)}>
 				<img className={classNames(styles.header_logo)} src={chimera} alt="chimera" />
-				<Heading tag="h1">Chimera</Heading>
+				<Heading size="medium" tag="h1">
+					Chimera
+				</Heading>
 				<Paragraph size="small" appearance="secondary">
 					596597
 				</Paragraph>
@@ -40,10 +42,17 @@ function Chimera() {
 					<Switchboard
 						id={tabIdMenu}
 						content={[
-							<Paragraph size="medium" appearance="primary">
-								Улучши одну легендарную пешку на один уровень один раз и получи 30
-								алмазов.
-							</Paragraph>,
+							<FlexGrid columnCount={2} childrenFill={true}>
+								<div className={classNames(styles.content_item)}>
+									<Heading size="medium" tag="h2">
+										Охота за легендарной пешкой.
+									</Heading>
+									<Paragraph appearance="secondary" size="medium">
+										Улучше одну легендарную пешку и получи 30 алмазов.
+									</Paragraph>
+								</div>
+								<Countdown timerIsoEnd={'2023-05-01'} />
+							</FlexGrid>,
 							<Paragraph size="medium" appearance="primary">
 								Участники скоро появятся
 							</Paragraph>,
