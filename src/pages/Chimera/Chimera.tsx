@@ -1,4 +1,4 @@
-import { FlexGrid, Heading, Paragraph } from '../../entities/ui'
+import { FlexGrid, Heading, Paper, Paragraph } from '../../entities/ui'
 import chimera from '../../assets/chimera.png'
 import type { ITab } from '../../app/types'
 import { Countdown, Tabs } from '../../widget/components'
@@ -27,7 +27,7 @@ function Chimera() {
 				</Paragraph>
 			</div>
 			<section className={classNames(styles.tabbed_container)}>
-				<div className={classNames(styles.tabbed_menu)}>
+				<Paper className={styles.tabbed_menu} appearance="primary">
 					<Tabs
 						className={styles.tabbed_item}
 						appearance="primary"
@@ -35,7 +35,7 @@ function Chimera() {
 						tabList={tabList}
 						setTabId={setTabIdMenu}
 					/>
-				</div>
+				</Paper>
 			</section>
 			<div className={classNames(styles.tabbed_container)}>
 				<div className={classNames(styles.tabbed_content)}>
@@ -50,8 +50,21 @@ function Chimera() {
 									<Paragraph appearance="secondary" size="medium">
 										Улучше одну легендарную пешку и получи 30 алмазов.
 									</Paragraph>
+									<Paper appearance="secondary" isCenterContent>
+										<Countdown timerIsoEndEvent={'2023-04-25'}>
+											<br />
+											<Paragraph size="medium" appearance="white">
+												Осталось до конца акции.
+											</Paragraph>
+										</Countdown>
+									</Paper>
 								</div>
-								<Countdown timerIsoEnd={'2023-05-01'} />
+								<div
+									className={classNames(styles.content_item, styles.center_item)}>
+									<Paragraph size="extra" appearance="secondary">
+										D
+									</Paragraph>
+								</div>
 							</FlexGrid>,
 							<Paragraph size="medium" appearance="primary">
 								Участники скоро появятся

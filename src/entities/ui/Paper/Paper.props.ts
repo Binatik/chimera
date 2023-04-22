@@ -1,7 +1,8 @@
 import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
 
-export interface CountdownProps
+export interface PaperProps
 	extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-	timerIsoEndEvent: string
-	children?: ReactNode
+	appearance: 'primary' | 'secondary'
+	children: ReactNode
+	isCenterContent?: boolean
 }

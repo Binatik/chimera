@@ -1,17 +1,31 @@
-.primary {
-	color: var(--primary-color);
+.paragraph {
 	line-height: 1.2;
+}
+
+.paragraph_primary {
+	color: var(--primary-color);
 }
 
 .paragraph_secondary {
 	color: var(--secondary-color);
-	line-height: 1.2;
+}
+
+.paragraph_white {
+	color: var(--white-color);
 }
 
 .paragraph_small {
-	font-size: 12px;
+	font-size: 1rem;
 }
 
 .paragraph_medium {
-	font-size: 16px;
+	font-size: 1.2rem;
+}
+
+.paragraph_large {
+	font-size: 1.5rem;
+}
+
+.paragraph_extra {
+	font-size: 7.5rem;
 }
