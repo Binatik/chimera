@@ -16,7 +16,7 @@ function FlexGrid({ columnCount, className, childrenFill, children }: FlexGridPr
 	}
 
 	return (
-		<div className={classNames(styles.container)}>
+		<div className={classNames(styles.wrapper)}>
 			{columns.map((col, index) => (
 				<div
 					className={classNames(styles.column, className, {

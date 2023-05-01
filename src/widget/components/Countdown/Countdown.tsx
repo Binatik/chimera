@@ -19,10 +19,12 @@ function Countdown({ timerIsoEndEvent, children }: CountdownProps) {
 			.toString()
 			.padStart(2, '0')
 
-		setData({
+		const timer = {
 			hours,
 			minutes,
-		})
+		}
+
+		setData(timer)
 	}
 
 	useEffect(() => {
@@ -35,7 +37,7 @@ function Countdown({ timerIsoEndEvent, children }: CountdownProps) {
 		return () => clearInterval(timerId)
 	}, [timeUntilEventEnd])
 
-	return (
+	return data && data.hours > '0' && data.minutes > '0' ? (
 		<>
 			<div className={classNames(styles.countdown)}>
 				<Paragraph appearance="white" size="large">
@@ -47,6 +49,10 @@ function Countdown({ timerIsoEndEvent, children }: CountdownProps) {
 			</div>
 			{children}
 		</>
+	) : (
+		<Paragraph appearance="white" size="large">
+			Акция завершена!
+		</Paragraph>
 	)
 }
 
