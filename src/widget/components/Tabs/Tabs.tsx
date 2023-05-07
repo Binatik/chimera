@@ -9,7 +9,7 @@ function Tabs({ tabList, tabId, className, setTabId, ...props }: ITabsProps) {
 	}
 	return (
 		<>
-			<FlexGrid className={className} columnCount={tabList.length} childrenFill={false}>
+			<FlexGrid className={className} childrenFill={false}>
 				{tabList.map((tab, index) => (
 					<Button
 						{...props}

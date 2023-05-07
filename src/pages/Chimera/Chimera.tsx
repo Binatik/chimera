@@ -109,59 +109,6 @@ function Chimera() {
 									</div>
 								</FlexGrid>
 							)),
-							// <FlexGrid childrenFill={true}>
-							// 	<div>111</div>
-							// 	<div>333</div>
-							// </FlexGrid>,
-
-							// <FlexGrid columnCount={2} childrenFill={true}>
-							// 	<div className={classNames(styles.content_item)}>
-							// 		<Heading size="medium" tag="h2">
-							// 			Cкоростя на максимум.
-							// 		</Heading>
-							// 		<Paragraph appearance="secondary" size="medium">
-							// 			Участвуй в турнире и набери максимальное количество очков,
-							// 			играя тапки как можно больше. Двое самых быстрых участников
-							// 			будут награждены.
-							// 		</Paragraph>
-							// 		<Paper appearance="secondary" isCenterContent>
-							// 			<Countdown timerIsoEndEvent={'2023-05-09'}>
-							// 				<br />
-							// 				<Paragraph size="medium" appearance="white">
-							// 					Осталось до конца акции.
-							// 				</Paragraph>
-							// 			</Countdown>
-							// 		</Paper>
-							// 	</div>
-							// 	<div
-							// 		className={classNames(styles.content_item, styles.center_item)}>
-							// 		<Paragraph size="extra" appearance="secondary">
-							// 			S
-							// 		</Paragraph>
-							// 	</div>
-							// 	<div className={classNames(styles.content_item)}>
-							// 		<Heading size="medium" tag="h2">
-							// 			Охота за легендарной пешкой.
-							// 		</Heading>
-							// 		<Paragraph appearance="secondary" size="medium">
-							// 			Улучше одну легендарную пешку и получи 30 алмазов.
-							// 		</Paragraph>
-							// 		<Paper appearance="secondary" isCenterContent>
-							// 			<Countdown timerIsoEndEvent={'2023-04-25'}>
-							// 				<br />
-							// 				<Paragraph size="medium" appearance="white">
-							// 					Осталось до конца акции.
-							// 				</Paragraph>
-							// 			</Countdown>
-							// 		</Paper>
-							// 	</div>
-							// 	<div
-							// 		className={classNames(styles.content_item, styles.center_item)}>
-							// 		<Paragraph size="extra" appearance="secondary">
-							// 			D
-							// 		</Paragraph>
-							// 	</div>
-							// </FlexGrid>,
 							<Paragraph size="medium" appearance="primary">
 								Участники скоро появятся
 							</Paragraph>,
