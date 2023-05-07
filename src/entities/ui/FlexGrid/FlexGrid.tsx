@@ -3,15 +3,17 @@ import styles from './FlexGrid.module.css'
 import classNames from 'classnames'
 import React, { ReactNode } from 'react'
 
-function FlexGrid({ columnCount, className, childrenFill, children }: FlexGridProps) {
+function FlexGrid({ className, childrenFill, children }: FlexGridProps) {
+	const childrenCount = React.Children.count(children)
+
 	const columns: Array<ReactNode[]> = []
-	for (let i = 0; i < columnCount; i++) {
+	for (let i = 0; i < childrenCount; i++) {
 		columns.push([])
 	}
 
 	{
 		React.Children.forEach(children, (child: ReactNode, index: number) => {
-			columns[index % columnCount].push(child)
+			columns[index % childrenCount].push(child)
 		})
 	}
 
@@ -21,10 +23,10 @@ function FlexGrid({ columnCount, className, childrenFill, children }: FlexGridPr
 				<div
 					className={classNames(styles.column, className, {
 						[styles.children_fill]: childrenFill,
-						[styles.column_auto]: columnCount === 1,
-						[styles.column_2]: columnCount === 2,
-						[styles.column_3]: columnCount === 3,
-						[styles.column_4]: columnCount === 4,
+						[styles.column_auto]: childrenCount === 1,
+						[styles.column_2]: childrenCount === 2,
+						[styles.column_3]: childrenCount === 3,
+						[styles.column_4]: childrenCount === 4,
 					})}
 					key={index}>
 					{col}

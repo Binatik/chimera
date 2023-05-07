@@ -29,3 +29,10 @@
 .paragraph_extra {
 	font-size: 7.5rem;
 }
+
+@media (max-width: 768px) {
+	/* Стили для мобильных экранов Medium */
+	.paragraph_extra {
+		font-size: 4rem;
+	}
+}

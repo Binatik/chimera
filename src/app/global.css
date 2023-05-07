@@ -15,6 +15,7 @@ body {
 }
 
 :root {
+	--link-color: #63caf2;
 	--white-color: #fff;
 	--dark-color: #000;
 	--primary-color: #31235c;
