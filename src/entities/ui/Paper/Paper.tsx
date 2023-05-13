@@ -9,6 +9,7 @@ function Paper({ appearance, className, isCenterContent, children }: PaperProps)
 				[styles.center_content]: isCenterContent,
 				[styles.paper_primary]: appearance === 'primary',
 				[styles.paper_secondary]: appearance === 'secondary',
+				[styles.paper_light]: appearance === 'light',
 			})}>
 			{children}
 		</div>

@@ -49,3 +49,34 @@
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
 }
+
+.rules {
+	margin-top: 4rem;
+}
+
+.rules_item {
+	margin: 0.5rem 0;
+	padding: 1rem;
+	min-height: auto;
+}
+
+.rules_accent {
+	color: var(--primary-color);
+	font-weight: 700;
+}
+
+.rules_link {
+	color: var(--link-color);
+	margin-left: 0.5rem;
+	text-decoration: none;
+}
+
+.rules_link:hover {
+	text-decoration: underline;
+}
+
+.rules_info {
+	color: var(--info-color);
+	margin-left: 0.5rem;
+	font-size: 14px;
+}

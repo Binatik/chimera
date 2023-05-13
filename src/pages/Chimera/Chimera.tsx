@@ -10,8 +10,7 @@ import React from 'react'
 
 const tabList: ITab[] = [
 	{ id: 1, title: 'Акции', picture: 'picture1.png' },
-	{ id: 2, title: 'Участники', picture: 'picture2.png' },
-	{ id: 3, title: 'Критерии отбора', picture: 'picture2.png' },
+	{ id: 2, title: 'Правила', picture: 'picture2.png' },
 ]
 
 const stocks: IStock[] = [
@@ -109,9 +108,160 @@ function Chimera() {
 									</div>
 								</FlexGrid>
 							)),
-							<Paragraph size="medium" appearance="primary">
-								Участники скоро появятся
-							</Paragraph>,
+
+							<div className={styles.rules}>
+								<Heading tag="h2" size="medium">
+									Основные
+								</Heading>
+								<Paper className={styles.rules_item} appearance="light">
+									<Paragraph size="medium" appearance="secondary">
+										<span className={styles.rules_accent}>1.1 ~ </span>Любой
+										человек, пришедший в наш клан, автоматически соглашается с
+										данным сводом правил и обязуется выполнять их.
+									</Paragraph>
+								</Paper>
+								<Paper className={styles.rules_item} appearance="light">
+									<Paragraph size="medium" appearance="secondary">
+										<span className={styles.rules_accent}>1.2 ~ </span>
+										Модераторы игрового сервера имеют полное право заблокировать
+										вам доступ к входу в канал или в сам клан за нарушение того
+										или иного пункта данного свода правил.
+									</Paragraph>
+								</Paper>
+								<Paper className={styles.rules_item} appearance="light">
+									<Paragraph size="medium" appearance="secondary">
+										<span className={styles.rules_accent}>1.3 ~ </span>
+										Независимо от статуса игрока, Охотник, Заклинатель, Архимаг,
+										Модератор - все равны и все понесут наказание за нарушение
+										правил, Исключение по пунктам
+										<a className={styles.rules_link} href="#t">
+											T.
+										</a>
+									</Paragraph>
+								</Paper>
+								<Paper className={styles.rules_item} appearance="light">
+									<Paragraph size="medium" appearance="secondary">
+										<span className={styles.rules_accent}>1.4 ~ </span>
+										Незнание правил не освобождает вас от ответственности.
+									</Paragraph>
+								</Paper>
+								<Paper className={styles.rules_item} appearance="light">
+									<Paragraph size="medium" appearance="secondary">
+										<span className={styles.rules_accent}>1.5 ~ </span>
+										Наказание выдаются по пункту правил и заголовку.
+										<span className={styles.rules_info}>
+											Пример - /warn @Dan4ik 3.1
+										</span>
+									</Paragraph>
+								</Paper>
+								<Paper className={styles.rules_item} appearance="light">
+									<Paragraph size="medium" appearance="secondary">
+										<span className={styles.rules_accent}>1.6 ~ </span>
+										сключение/наказание игрока запрещается если в клане менее 21
+										человека. Исключение
+										<a className={styles.rules_link} href="#t">
+											Т 3.1.
+										</a>
+									</Paragraph>
+								</Paper>
+								<Paper className={styles.rules_item} appearance="light">
+									<Paragraph size="medium" appearance="secondary">
+										<span className={styles.rules_accent}>1.7 ~ </span>
+										Перед выдачей наказания Модератор обязуется предупредить о
+										выдаче наказания в бан-лист, а так же донести до игрока
+										пункт нарушения.
+									</Paragraph>
+								</Paper>
+								<Paper className={styles.rules_item} appearance="light">
+									<Paragraph size="medium" appearance="secondary">
+										<span className={styles.rules_accent}>1.8 ~ </span>
+										Правила могут быть изменены/отформатированы.
+									</Paragraph>
+								</Paper>
+								<br></br>
+								<br></br>
+								<Heading tag="h2" size="medium">
+									Общение в чате
+								</Heading>
+								<Paper className={styles.rules_item} appearance="light">
+									<Paragraph size="medium" appearance="secondary">
+										<span className={styles.rules_accent}>2.1 ~ </span>
+										Запрещено употреблять мат, в том числе завуалированный и/или
+										на иностранном языке.
+										<span className={styles.rules_info}>
+											- предупреждение = предупреждение = warn
+										</span>
+									</Paragraph>
+								</Paper>
+								<Paper className={styles.rules_item} appearance="light">
+									<Paragraph size="medium" appearance="secondary">
+										<span className={styles.rules_accent}>2.2 ~ </span>
+										Запрещено оскорбительное поведение по отношению к другим
+										игрокам.
+										<span className={styles.rules_info}>
+											- предупреждение = предупреждение = warn
+										</span>
+									</Paragraph>
+								</Paper>
+								<Paper className={styles.rules_item} appearance="light">
+									<Paragraph size="medium" appearance="secondary">
+										<span className={styles.rules_accent}>2.3 ~ </span>
+										Запрещен флуд в чатах.
+										<span className={styles.rules_info}>
+											- предупреждение = предупреждение = предупреждение =
+											warn
+										</span>
+									</Paragraph>
+								</Paper>
+								<Paper className={styles.rules_item} appearance="light">
+									<Paragraph size="medium" appearance="secondary">
+										<span className={styles.rules_accent}>2.4 ~ </span>
+										Запрещено упоминать (в оскорбительной/унизительной форме),
+										унижать, оскорблять Родителей и Родственников.
+										<span className={styles.rules_info}>- warn</span>
+									</Paragraph>
+								</Paper>
+								<Paper className={styles.rules_item} appearance="light">
+									<Paragraph size="medium" appearance="secondary">
+										<span className={styles.rules_accent}>2.5 ~ </span>
+										Запрещена реклама.
+										<span className={styles.rules_info}>- warn</span>
+									</Paragraph>
+								</Paper>
+								<br></br>
+								<br></br>
+								<Heading id="t" tag="h2" size="medium">
+									Турнир
+								</Heading>
+								<Paper className={styles.rules_item} appearance="light">
+									<Paragraph size="medium" appearance="secondary">
+										<span className={styles.rules_accent}>3.1 ~ </span>
+										Отказываться от турнира или игнорировать его.
+										<span className={styles.rules_info}>- warn</span>
+									</Paragraph>
+								</Paper>
+								<Paper className={styles.rules_item} appearance="light">
+									<Paragraph size="medium" appearance="secondary">
+										<span className={styles.rules_accent}>3.2 ~ </span>
+										Относится к турниру как к необязательной форме игрового
+										процесса.
+										<span className={styles.rules_info}>
+											- предупреждение + многократно = warn
+										</span>
+									</Paragraph>
+								</Paper>
+								<Paper className={styles.rules_item} appearance="light">
+									<Paragraph size="medium" appearance="secondary">
+										<span className={styles.rules_accent}>3.3 ~ </span>
+										Игнорировать требования модерации о просьбе участие в
+										турнире.
+										<span className={styles.rules_info}>
+											- предупреждение = warn
+										</span>
+									</Paragraph>
+								</Paper>
+							</div>,
+
 							<Paragraph size="medium" appearance="primary">
 								Критерии скоро появятся
 							</Paragraph>,
