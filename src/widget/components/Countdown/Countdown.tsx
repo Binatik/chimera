@@ -45,12 +45,12 @@ function Countdown({ timerIsoEndEvent, children }: CountdownProps) {
 				</Paragraph>
 				<Paragraph
 					appearance="white"
-					size="large">{`: ${data?.minutes} - Минут`}</Paragraph>
+					size="medium">{`: ${data?.minutes} - Минут`}</Paragraph>
 			</div>
 			{children}
 		</>
 	) : (
-		<Paragraph appearance="white" size="large">
+		<Paragraph appearance="white" size="medium">
 			Акция завершена!
 		</Paragraph>
 	)
