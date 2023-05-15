@@ -65,18 +65,26 @@
 	font-weight: 700;
 }
 
-.rules_link {
+.link {
 	color: var(--link-color);
-	margin-left: 0.5rem;
+	margin-right: 0.5rem;
 	text-decoration: none;
 }
 
-.rules_link:hover {
+.link:hover {
 	text-decoration: underline;
 }
 
-.rules_info {
+.info {
 	color: var(--info-color);
+	margin-right: 0.5rem;
+}
+
+.rules_link {
+	margin-left: 0.5rem;
+}
+
+.rules_info {
 	margin-left: 0.5rem;
 	font-size: 14px;
 }

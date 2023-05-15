@@ -16,4 +16,5 @@ export interface IStock {
 	type: 'D' | 'B' | 'S' | 'S+'
 	victorsList: Array<string>
 	timerIsoEndEvent: string
+	explanation?: boolean
 }

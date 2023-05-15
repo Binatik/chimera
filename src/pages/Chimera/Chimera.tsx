@@ -16,6 +16,14 @@ const tabList: ITab[] = [
 const stocks: IStock[] = [
 	{
 		id: 1,
+		title: 'Охота за легендарной пешкой.',
+		description: `Улучше одну легендарную пешку и получи 30 алмазов.`,
+		type: 'D',
+		victorsList: [],
+		timerIsoEndEvent: '2023-04-25',
+	},
+	{
+		id: 2,
 		title: 'Cкоростя на максимум.',
 		description: `Участвуй в турнире и набери максимальное количество очков,
 		играя тапки как можно больше. Двое самых быстрых участников
@@ -25,14 +33,17 @@ const stocks: IStock[] = [
 		timerIsoEndEvent: '2023-05-07',
 	},
 	{
-		id: 2,
-		title: 'Охота за легендарной пешкой.',
-		description: `Улучше одну легендарную пешку и получи 30 алмазов.`,
-		type: 'D',
+		id: 3,
+		title: 'Время в спять.',
+		description: `Прими участие в событии, получи пешку этого события и верни себе 50 платины.`,
+		type: 'S',
 		victorsList: [],
-		timerIsoEndEvent: '2023-04-25',
+		timerIsoEndEvent: '2023-05-19',
+		explanation: true,
 	},
 ]
+
+const reverseStocks = [...stocks.reverse()]
 
 function Chimera() {
 	const [tabIdMenu, setTabIdMenu] = useState(1)
@@ -63,14 +74,33 @@ function Chimera() {
 					<Switchboard
 						id={tabIdMenu}
 						content={[
-							stocks.map((item: IStock) => (
+							reverseStocks.map((item: IStock) => (
 								<FlexGrid key={item.id} childrenFill={true}>
 									<div className={classNames(styles.content_item)}>
 										<Heading size="medium" tag="h2">
 											{item.title}
 										</Heading>
 										<Paragraph appearance="secondary" size="medium">
-											{item.description}
+											{item.description + ' '}
+											{item.explanation ? (
+												<>
+													<span className={styles.info}>
+														Для получения награды необходимо сделать три
+														фотографии и отправить в
+													</span>
+													<a
+														className={styles.link}
+														target="_blank"
+														href="https://discord.gg/3mHhtzHp">
+														discord канал
+													</a>
+													<span className={styles.info}>
+														первая - магазина до покупки пешки, вторая -
+														магазина после покупки пешки, и третья - с
+														пешкой в инвентаре.
+													</span>
+												</>
+											) : null}
 										</Paragraph>
 										<Paper appearance="secondary" isCenterContent>
 											<Countdown timerIsoEndEvent={item.timerIsoEndEvent}>
@@ -134,7 +164,9 @@ function Chimera() {
 										Независимо от статуса игрока, Охотник, Заклинатель, Архимаг,
 										Модератор - все равны и все понесут наказание за нарушение
 										правил, Исключение по пунктам
-										<a className={styles.rules_link} href="#t">
+										<a
+											className={classNames(styles.link, styles.rules_link)}
+											href="#t">
 											T.
 										</a>
 									</Paragraph>
@@ -149,7 +181,8 @@ function Chimera() {
 									<Paragraph size="medium" appearance="secondary">
 										<span className={styles.rules_accent}>1.5 ~ </span>
 										Наказание выдаются по пункту правил и заголовку.
-										<span className={styles.rules_info}>
+										<span
+											className={classNames(styles.info, styles.rules_info)}>
 											Пример - /warn @Dan4ik 3.1
 										</span>
 									</Paragraph>
@@ -159,7 +192,9 @@ function Chimera() {
 										<span className={styles.rules_accent}>1.6 ~ </span>
 										сключение/наказание игрока запрещается если в клане менее 21
 										человека. Исключение
-										<a className={styles.rules_link} href="#t">
+										<a
+											className={classNames(styles.link, styles.rules_link)}
+											href="#t">
 											Т 3.1.
 										</a>
 									</Paragraph>
@@ -188,7 +223,8 @@ function Chimera() {
 										<span className={styles.rules_accent}>2.1 ~ </span>
 										Запрещено употреблять мат, в том числе завуалированный и/или
 										на иностранном языке.
-										<span className={styles.rules_info}>
+										<span
+											className={classNames(styles.info, styles.rules_info)}>
 											- предупреждение = предупреждение = warn
 										</span>
 									</Paragraph>
@@ -198,7 +234,8 @@ function Chimera() {
 										<span className={styles.rules_accent}>2.2 ~ </span>
 										Запрещено оскорбительное поведение по отношению к другим
 										игрокам.
-										<span className={styles.rules_info}>
+										<span
+											className={classNames(styles.info, styles.rules_info)}>
 											- предупреждение = предупреждение = warn
 										</span>
 									</Paragraph>
@@ -207,7 +244,8 @@ function Chimera() {
 									<Paragraph size="medium" appearance="secondary">
 										<span className={styles.rules_accent}>2.3 ~ </span>
 										Запрещен флуд в чатах.
-										<span className={styles.rules_info}>
+										<span
+											className={classNames(styles.info, styles.rules_info)}>
 											- предупреждение = предупреждение = предупреждение =
 											warn
 										</span>
@@ -218,14 +256,20 @@ function Chimera() {
 										<span className={styles.rules_accent}>2.4 ~ </span>
 										Запрещено упоминать (в оскорбительной/унизительной форме),
 										унижать, оскорблять Родителей и Родственников.
-										<span className={styles.rules_info}>- warn</span>
+										<span
+											className={classNames(styles.info, styles.rules_info)}>
+											- warn
+										</span>
 									</Paragraph>
 								</Paper>
 								<Paper className={styles.rules_item} appearance="light">
 									<Paragraph size="medium" appearance="secondary">
 										<span className={styles.rules_accent}>2.5 ~ </span>
 										Запрещена реклама.
-										<span className={styles.rules_info}>- warn</span>
+										<span
+											className={classNames(styles.info, styles.rules_info)}>
+											- warn
+										</span>
 									</Paragraph>
 								</Paper>
 								<br></br>
@@ -237,7 +281,10 @@ function Chimera() {
 									<Paragraph size="medium" appearance="secondary">
 										<span className={styles.rules_accent}>3.1 ~ </span>
 										Отказываться от турнира или игнорировать его.
-										<span className={styles.rules_info}>- warn</span>
+										<span
+											className={classNames(styles.info, styles.rules_info)}>
+											- warn
+										</span>
 									</Paragraph>
 								</Paper>
 								<Paper className={styles.rules_item} appearance="light">
@@ -245,7 +292,8 @@ function Chimera() {
 										<span className={styles.rules_accent}>3.2 ~ </span>
 										Относится к турниру как к необязательной форме игрового
 										процесса.
-										<span className={styles.rules_info}>
+										<span
+											className={classNames(styles.info, styles.rules_info)}>
 											- предупреждение + многократно = warn
 										</span>
 									</Paragraph>
@@ -255,7 +303,8 @@ function Chimera() {
 										<span className={styles.rules_accent}>3.3 ~ </span>
 										Игнорировать требования модерации о просьбе участие в
 										турнире.
-										<span className={styles.rules_info}>
+										<span
+											className={classNames(styles.info, styles.rules_info)}>
 											- предупреждение = warn
 										</span>
 									</Paragraph>

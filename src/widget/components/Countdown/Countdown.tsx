@@ -40,7 +40,7 @@ function Countdown({ timerIsoEndEvent, children }: CountdownProps) {
 	return data && data.hours > '0' && data.minutes > '0' ? (
 		<>
 			<div className={classNames(styles.countdown)}>
-				<Paragraph appearance="white" size="large">
+				<Paragraph appearance="white" size="medium">
 					{data?.hours}
 				</Paragraph>
 				<Paragraph
