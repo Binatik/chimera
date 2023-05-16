@@ -37,7 +37,7 @@ const stocks: IStock[] = [
 		title: 'Время в спять.',
 		description: `Прими участие в событии, получи пешку этого события и верни себе 50 платины.`,
 		type: 'S',
-		victorsList: [],
+		victorsList: ['MrCmerte'],
 		timerIsoEndEvent: '2023-05-19',
 		explanation: true,
 	},
