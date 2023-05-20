@@ -37,7 +37,7 @@ const stocks: IStock[] = [
 		title: 'Время в спять.',
 		description: `Прими участие в событии, получи пешку этого события и верни себе 50 платины.`,
 		type: 'S',
-		victorsList: ['MrCmerte'],
+		victorsList: ['MrCmerte', 'Player60161283', 'Mudya', 'Бу!бновыйБунт@рь'],
 		timerIsoEndEvent: '2023-05-19',
 		explanation: true,
 	},
@@ -221,8 +221,8 @@ function Chimera() {
 								<Paper className={styles.rules_item} appearance="light">
 									<Paragraph size="medium" appearance="secondary">
 										<span className={styles.rules_accent}>2.1 ~ </span>
-										Запрещено употреблять мат, в том числе завуалированный и/или
-										на иностранном языке.
+										Запрещено употреблять в грубой форме мат, в том числе
+										завуалированный.
 										<span
 											className={classNames(styles.info, styles.rules_info)}>
 											- предупреждение = предупреждение = warn

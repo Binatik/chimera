@@ -44,11 +44,23 @@
 	font-size: 44rem;
 }
 
+.victors_list {
+	max-width: 250px;
+}
+
 .victors {
 	color: var(--link-color);
-	padding-left: 0.5rem;
 	padding-right: 0.5rem;
+	display: inline-block;
 }
+
+.victors:nth-child(1) {
+	padding-left: 0.5rem;
+}
+
+/* .victors_list :nth-child(2n) {
+
+} */
 
 .rules {
 	margin-top: 4rem;
