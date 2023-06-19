@@ -41,6 +41,16 @@ const stocks: IStock[] = [
 		timerIsoEndEvent: '2023-05-19',
 		explanation: true,
 	},
+	{
+		id: 4,
+		title: 'Гонка со своими.',
+		description: `Прими участие в событии, получи пешку этого события и верни себе 50 платины. 
+		Первые два победителя получают награду сразу, третий будет выбран случайным образом среди всех остальных.`,
+		type: 'S',
+		victorsList: [],
+		timerIsoEndEvent: '2023-06-24',
+		explanation: true,
+	},
 ]
 
 const reverseStocks = [...stocks.reverse()]
@@ -91,8 +101,8 @@ function Chimera() {
 													<a
 														className={styles.link}
 														target="_blank"
-														href="https://discord.gg/3mHhtzHp">
-														discord канал
+														href="https://t.me/+qWpXFpva3TIzOTUy">
+														Telegram chat
 													</a>
 													<span className={styles.info}>
 														первая - магазина до покупки пешки, вторая -
