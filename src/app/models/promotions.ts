@@ -70,7 +70,7 @@ export const promotions = [
 	{
 		id: uui().split('-')[0],
 		title: 'Время в спять.',
-		rank: 'D',
+		rank: 'S',
 		timerIsoEndEvent: '2023-05-19',
 		blocks: [
 			{
@@ -144,7 +144,7 @@ export const promotions = [
 	{
 		id: uui().split('-')[0],
 		title: 'Охота за легендарной пешкой.',
-		rank: 'D',
+		rank: 'S',
 		timerIsoEndEvent: '2023-06-25',
 		blocks: [
 			{
@@ -190,8 +190,24 @@ export const promotions = [
 					},
 				],
 			},
+			{
+				id: uui().split('-')[0],
+				descriptions: [
+					{
+						id: uui().split('-')[0],
+						type: Description.WARNING,
+						text: `Приза осталось - 2/3`,
+					},
+				],
+			},
 		],
-		leaders: [],
+		leaders: [
+			{
+				id: uui().split('-')[0],
+				leader: 'Koosey',
+				href: 'https://t.me/Yul0o',
+			},
+		],
 	},
 ]
 
