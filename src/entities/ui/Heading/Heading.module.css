@@ -1,13 +1,35 @@
 .tag {
-	color: var(--primary-color);
-	font-weight: 700;
 	line-height: 1.1;
 }
 
+.tag_primary {
+	color: var(--primary-color);
+}
+
+.tag_secondary {
+	color: var(--secondary-color);
+}
+
 .tag_small {
-	font-size: 1.3rem;
+	font-size: 1.1rem;
 }
 
 .tag_medium {
-	font-size: 1.8rem;
+	font-size: 1.43rem;
+}
+
+.tag_medium {
+	font-size: 1.43rem;
+}
+
+.tag_extra {
+	font-size: 8rem;
+}
+
+@media (max-width: 768px) {
+	/* Стили для мобильных экранов Medium */
+
+	.tag_extra {
+		font-size: 3rem;
+	}
 }

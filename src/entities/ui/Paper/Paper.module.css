@@ -1,6 +1,6 @@
 .paper {
 	border-radius: 15px;
-	min-height: 70px;
+	min-height: 55px;
 	color: var(--white-color);
 }
 
@@ -20,8 +20,12 @@
 
 .paper_secondary {
 	background: var(--inline-color);
-	box-shadow: 0px 10px 50px -13px rgba(110, 63, 255, 1),
-		0px -8px 12px -4px rgba(255, 255, 255, 0.54) inset;
+	box-shadow: 0px 4px 34px rgba(113, 61, 221, 0.5);
+}
+
+.paper_blocked {
+	background: var(--secondary-color);
+	box-shadow: 0px 1.37778px 26.8667px rgba(0, 0, 0, 0.11);
 }
 
 .paper_light {

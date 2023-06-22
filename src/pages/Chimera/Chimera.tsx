@@ -1,12 +1,15 @@
-import { FlexGrid, Heading, Paper, Paragraph } from '../../entities/ui'
+import { Button, FlexGrid, Heading, Paper, Paragraph } from '../../entities/ui'
 import chimera from '../../assets/chimera.png'
 import type { IStock, ITab } from '../../app/types'
-import { Countdown, Tabs } from '../../widget/components'
+import { Tabs } from '../../widget/components'
 import { useState } from 'react'
-import { Switchboard } from '../../features/components'
+import { Countdown, Switchboard } from '../../features/components'
 import classNames from 'classnames'
 import styles from './Chimera.module.css'
+import { Link } from '../../entities/ui/Link/Link'
+import { v4 as uui } from 'uuid'
 import React from 'react'
+import { Description, promotions } from '../../app/models/promotions'
 
 const tabList: ITab[] = [
 	{ id: 1, title: 'Акции', picture: 'picture1.png' },
@@ -53,7 +56,7 @@ const stocks: IStock[] = [
 	},
 ]
 
-const reverseStocks = [...stocks.reverse()]
+const reversePromotions = [...promotions.reverse()]
 
 function Chimera() {
 	const [tabIdMenu, setTabIdMenu] = useState(1)
@@ -61,7 +64,7 @@ function Chimera() {
 		<>
 			<div className={classNames(styles.header)}>
 				<img className={classNames(styles.header_logo)} src={chimera} alt="chimera" />
-				<Heading size="medium" tag="h1">
+				<Heading appearance="primary" size="medium" tag="h1">
 					Chimera
 				</Heading>
 				<Paragraph size="small" appearance="secondary">
@@ -84,246 +87,176 @@ function Chimera() {
 					<Switchboard
 						id={tabIdMenu}
 						content={[
-							reverseStocks.map((item: IStock) => (
-								<FlexGrid key={item.id} childrenFill={true}>
-									<div className={classNames(styles.content_item)}>
-										<Heading size="medium" tag="h2">
-											{item.title}
+							reversePromotions.map((promotion) => (
+								<FlexGrid key={promotion.id} margin="medium" childrenFill={false}>
+									<div className={styles.switchboard_item}>
+										<Heading appearance="primary" size="medium" tag="h2">
+											{promotion.title}
 										</Heading>
-										<Paragraph appearance="secondary" size="medium">
-											{item.description + ' '}
-											{item.explanation ? (
-												<>
-													<span className={styles.info}>
-														Для получения награды необходимо сделать три
-														фотографии и отправить в
-													</span>
-													<a
-														className={styles.link}
-														target="_blank"
-														href="https://t.me/+qWpXFpva3TIzOTUy">
-														Telegram chat
-													</a>
-													<span className={styles.info}>
-														первая - магазина до покупки пешки, вторая -
-														магазина после покупки пешки, и третья - с
-														пешкой в инвентаре.
-													</span>
-												</>
-											) : null}
-										</Paragraph>
-										<Paper appearance="secondary" isCenterContent>
-											<Countdown timerIsoEndEvent={item.timerIsoEndEvent}>
-												<br />
-												<Paragraph size="medium" appearance="white">
-													Осталось до конца акции.
-												</Paragraph>
-											</Countdown>
-										</Paper>
-										{item.victorsList.length > 0 ? (
-											<Paragraph appearance="secondary" size="medium">
-												Победили
-												{item.victorsList.map((victors, index) => (
-													<React.Fragment key={index}>
-														<span className={styles.victors}>
-															{victors}
-														</span>
+
+										{promotion.blocks.map((block) => (
+											<div
+												key={block.id}
+												className={styles.description_block}>
+												{block.descriptions.map((description) => (
+													<React.Fragment key={description.id}>
+														{description.type === Description.TEXT && (
+															<Paragraph
+																className={styles.switchboard_text}
+																appearance="secondary"
+																size="medium">
+																{description.text}
+															</Paragraph>
+														)}
+
+														{description.type === Description.LINK &&
+															description.href && (
+																<Link
+																	appearance="primary"
+																	className={
+																		styles.switchboard_link
+																	}
+																	href={description.href}
+																	target="_blank">
+																	{description.text}
+																</Link>
+															)}
+
+														{description.type ===
+															Description.WARNING && (
+															<Paragraph
+																className={
+																	styles.switchboard_text_middle
+																}
+																appearance="warning"
+																size="large">
+																{description.text}
+															</Paragraph>
+														)}
 													</React.Fragment>
 												))}
-											</Paragraph>
-										) : (
-											<Paragraph appearance="secondary" size="medium">
-												Победителей нет!
-											</Paragraph>
-										)}
+											</div>
+										))}
+										<Countdown
+											className={styles.switchboard_countdown}
+											timerIsoEndEvent={promotion.timerIsoEndEvent}
+										/>
 									</div>
-									<div
-										className={classNames(
-											styles.content_item,
-											styles.center_item
-										)}>
-										<Paragraph size="extra" appearance="secondary">
-											{item.type}
-										</Paragraph>
+									<div className={styles.switchboard_item}>
+										<Heading
+											className={styles.switchboard_rang}
+											appearance="secondary"
+											tag="h2"
+											size="extra">
+											{promotion.rank}
+										</Heading>
+										<div className={styles.switchboard_leader}>
+											{promotion.leaders.map((leader) => (
+												<Link
+													key={leader.id}
+													className={styles.switchboard_leader_link}
+													href={leader.href}
+													appearance="secondary">
+													{leader.leader}
+												</Link>
+											))}
+										</div>
 									</div>
 								</FlexGrid>
 							)),
 
-							<div className={styles.rules}>
-								<Heading tag="h2" size="medium">
-									Основные
-								</Heading>
-								<Paper className={styles.rules_item} appearance="light">
-									<Paragraph size="medium" appearance="secondary">
-										<span className={styles.rules_accent}>1.1 ~ </span>Любой
-										человек, пришедший в наш клан, автоматически соглашается с
-										данным сводом правил и обязуется выполнять их.
-									</Paragraph>
-								</Paper>
-								<Paper className={styles.rules_item} appearance="light">
-									<Paragraph size="medium" appearance="secondary">
-										<span className={styles.rules_accent}>1.2 ~ </span>
-										Модераторы игрового сервера имеют полное право заблокировать
-										вам доступ к входу в канал или в сам клан за нарушение того
-										или иного пункта данного свода правил.
-									</Paragraph>
-								</Paper>
-								<Paper className={styles.rules_item} appearance="light">
-									<Paragraph size="medium" appearance="secondary">
-										<span className={styles.rules_accent}>1.3 ~ </span>
-										Независимо от статуса игрока, Охотник, Заклинатель, Архимаг,
-										Модератор - все равны и все понесут наказание за нарушение
-										правил, Исключение по пунктам
-										<a
-											className={classNames(styles.link, styles.rules_link)}
-											href="#t">
-											T.
-										</a>
-									</Paragraph>
-								</Paper>
-								<Paper className={styles.rules_item} appearance="light">
-									<Paragraph size="medium" appearance="secondary">
-										<span className={styles.rules_accent}>1.4 ~ </span>
-										Незнание правил не освобождает вас от ответственности.
-									</Paragraph>
-								</Paper>
-								<Paper className={styles.rules_item} appearance="light">
-									<Paragraph size="medium" appearance="secondary">
-										<span className={styles.rules_accent}>1.5 ~ </span>
-										Наказание выдаются по пункту правил и заголовку.
-										<span
-											className={classNames(styles.info, styles.rules_info)}>
-											Пример - /warn @Dan4ik 3.1
-										</span>
-									</Paragraph>
-								</Paper>
-								<Paper className={styles.rules_item} appearance="light">
-									<Paragraph size="medium" appearance="secondary">
-										<span className={styles.rules_accent}>1.6 ~ </span>
-										сключение/наказание игрока запрещается если в клане менее 21
-										человека. Исключение
-										<a
-											className={classNames(styles.link, styles.rules_link)}
-											href="#t">
-											Т 3.1.
-										</a>
-									</Paragraph>
-								</Paper>
-								<Paper className={styles.rules_item} appearance="light">
-									<Paragraph size="medium" appearance="secondary">
-										<span className={styles.rules_accent}>1.7 ~ </span>
-										Перед выдачей наказания Модератор обязуется предупредить о
-										выдаче наказания в бан-лист, а так же донести до игрока
-										пункт нарушения.
-									</Paragraph>
-								</Paper>
-								<Paper className={styles.rules_item} appearance="light">
-									<Paragraph size="medium" appearance="secondary">
-										<span className={styles.rules_accent}>1.8 ~ </span>
-										Правила могут быть изменены/отформатированы.
-									</Paragraph>
-								</Paper>
-								<br></br>
-								<br></br>
-								<Heading tag="h2" size="medium">
-									Общение в чате
-								</Heading>
-								<Paper className={styles.rules_item} appearance="light">
-									<Paragraph size="medium" appearance="secondary">
-										<span className={styles.rules_accent}>2.1 ~ </span>
-										Запрещено употреблять в грубой форме мат, в том числе
-										завуалированный.
-										<span
-											className={classNames(styles.info, styles.rules_info)}>
-											- предупреждение = предупреждение = warn
-										</span>
-									</Paragraph>
-								</Paper>
-								<Paper className={styles.rules_item} appearance="light">
-									<Paragraph size="medium" appearance="secondary">
-										<span className={styles.rules_accent}>2.2 ~ </span>
-										Запрещено оскорбительное поведение по отношению к другим
-										игрокам.
-										<span
-											className={classNames(styles.info, styles.rules_info)}>
-											- предупреждение = предупреждение = warn
-										</span>
-									</Paragraph>
-								</Paper>
-								<Paper className={styles.rules_item} appearance="light">
-									<Paragraph size="medium" appearance="secondary">
-										<span className={styles.rules_accent}>2.3 ~ </span>
-										Запрещен флуд в чатах.
-										<span
-											className={classNames(styles.info, styles.rules_info)}>
-											- предупреждение = предупреждение = предупреждение =
-											warn
-										</span>
-									</Paragraph>
-								</Paper>
-								<Paper className={styles.rules_item} appearance="light">
-									<Paragraph size="medium" appearance="secondary">
-										<span className={styles.rules_accent}>2.4 ~ </span>
-										Запрещено упоминать (в оскорбительной/унизительной форме),
-										унижать, оскорблять Родителей и Родственников.
-										<span
-											className={classNames(styles.info, styles.rules_info)}>
-											- warn
-										</span>
-									</Paragraph>
-								</Paper>
-								<Paper className={styles.rules_item} appearance="light">
-									<Paragraph size="medium" appearance="secondary">
-										<span className={styles.rules_accent}>2.5 ~ </span>
-										Запрещена реклама.
-										<span
-											className={classNames(styles.info, styles.rules_info)}>
-											- warn
-										</span>
-									</Paragraph>
-								</Paper>
-								<br></br>
-								<br></br>
-								<Heading id="t" tag="h2" size="medium">
-									Турнир
-								</Heading>
-								<Paper className={styles.rules_item} appearance="light">
-									<Paragraph size="medium" appearance="secondary">
-										<span className={styles.rules_accent}>3.1 ~ </span>
-										Отказываться от турнира или игнорировать его.
-										<span
-											className={classNames(styles.info, styles.rules_info)}>
-											- warn
-										</span>
-									</Paragraph>
-								</Paper>
-								<Paper className={styles.rules_item} appearance="light">
-									<Paragraph size="medium" appearance="secondary">
-										<span className={styles.rules_accent}>3.2 ~ </span>
-										Относится к турниру как к необязательной форме игрового
-										процесса.
-										<span
-											className={classNames(styles.info, styles.rules_info)}>
-											- предупреждение + многократно = warn
-										</span>
-									</Paragraph>
-								</Paper>
-								<Paper className={styles.rules_item} appearance="light">
-									<Paragraph size="medium" appearance="secondary">
-										<span className={styles.rules_accent}>3.3 ~ </span>
-										Игнорировать требования модерации о просьбе участие в
-										турнире.
-										<span
-											className={classNames(styles.info, styles.rules_info)}>
-											- предупреждение = warn
-										</span>
-									</Paragraph>
-								</Paper>
-							</div>,
+							// <FlexGrid margin="medium" childrenFill={false}>
+							// 	<div className={styles.switchboard_item}>
+							// 		<div className={styles.description_block}>
+							// 			<Paragraph
+							// 				className={styles.switchboard_text}
+							// 				appearance="secondary"
+							// 				size="medium">
+							// 				Прими участие в событии, получи пешку этого события и
+							// 				верни себе
+							// 			</Paragraph>
+							// 			<Link
+							// 				appearance="primary"
+							// 				className={styles.switchboard_link}
+							// 				href="https://market.vkplay.ru/shop/148"
+							// 				target="_blank">
+							// 				50 платины
+							// 			</Link>
+							// 		</div>
 
-							<Paragraph size="medium" appearance="primary">
-								Критерии скоро появятся
-							</Paragraph>,
+							// 		<div className={styles.description_block_middle}>
+							// 			<Paragraph
+							// 				className={styles.switchboard_text}
+							// 				appearance="warning"
+							// 				size="large">
+							// 				Сделай три фото и отправь в
+							// 			</Paragraph>
+							// 			<Link
+							// 				appearance="primary"
+							// 				className={styles.switchboard_link}
+							// 				href="https://t.me/+-mK_tFcigUZlN2My"
+							// 				target="_blank">
+							// 				Telegram chat
+							// 			</Link>
+							// 		</div>
+							// 		<div className={styles.description_block}>
+							// 			<Paragraph
+							// 				className={styles.switchboard_text}
+							// 				appearance="secondary"
+							// 				size="medium">
+							// 				Первое фото - магазина до покупки пешки. Второе -
+							// 				магазина после покупки. Третье - с пешкой в инвентаре
+							// 			</Paragraph>
+							// 		</div>
+
+							// 		<Countdown
+							// 			className={styles.switchboard_countdown}
+							// 			timerIsoEndEvent="2023-04-24"
+							// 		/>
+							// 	</div>
+
+							// 	<div className={styles.switchboard_item}>
+							// 		<Heading
+							// 			className={styles.switchboard_rang}
+							// 			appearance="secondary"
+							// 			tag="h2"
+							// 			size="extra">
+							// 			S
+							// 		</Heading>
+							// 		<div className={styles.switchboard_leader}>
+							// 			<Link
+							// 				className={styles.switchboard_leader_link}
+							// 				href="#"
+							// 				appearance="secondary">
+							// 				Mudya
+							// 			</Link>
+							// 			<Link
+							// 				className={styles.switchboard_leader_link}
+							// 				href="#"
+							// 				appearance="secondary">
+							// 				Mudya
+							// 			</Link>
+							// 			<Link
+							// 				className={styles.switchboard_leader_link}
+							// 				href="#"
+							// 				appearance="secondary">
+							// 				Mudya
+							// 			</Link>
+							// 			<Link
+							// 				className={styles.switchboard_leader_link}
+							// 				href="#"
+							// 				appearance="secondary">
+							// 				Mudya
+							// 			</Link>
+							// 			<Link
+							// 				className={styles.switchboard_leader_link}
+							// 				href="#"
+							// 				appearance="secondary">
+							// 				Mudya
+							// 			</Link>
+							// 		</div>
+							// 	</div>
+							// </FlexGrid>,
 						]}
 					/>
 				</div>

@@ -1,11 +1,18 @@
 .wrapper {
 	display: flex;
 	flex-wrap: wrap;
+	padding-bottom: 80px;
 }
 
 .column {
 	display: flex;
 	flex-wrap: wrap;
+	flex-grow: 1;
+	margin-top: 10px;
+}
+
+.column_margin {
+	margin-right: 120px;
 }
 
 .children_fill > * {
@@ -16,6 +23,10 @@
 	/* Стили для мобильных экранов Medium */
 	.column {
 		width: calc(100% / 2);
+	}
+
+	.column_margin {
+		margin-right: 30px;
 	}
 }
 
@@ -33,14 +44,14 @@
 	}
 
 	.column_2 {
-		width: calc(100% / 2);
+		width: calc(100% / 2 - 120px);
 	}
 
 	.column_3 {
-		width: calc(100% / 3);
+		width: calc(100% / 3 - 120px);
 	}
 
 	.column_4 {
-		width: calc(100% / 4);
+		width: calc(100% / 4 - 120px);
 	}
 }

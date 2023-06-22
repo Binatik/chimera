@@ -3,7 +3,7 @@ import styles from './FlexGrid.module.css'
 import classNames from 'classnames'
 import React, { ReactNode } from 'react'
 
-function FlexGrid({ className, childrenFill, children }: FlexGridProps) {
+function FlexGrid({ className, childrenFill, margin, children }: FlexGridProps) {
 	const childrenCount = React.Children.count(children)
 
 	const columns: Array<ReactNode[]> = []
@@ -23,6 +23,7 @@ function FlexGrid({ className, childrenFill, children }: FlexGridProps) {
 				<div
 					className={classNames(styles.column, className, {
 						[styles.children_fill]: childrenFill,
+						[styles.column_margin]: margin === 'medium',
 						[styles.column_auto]: childrenCount === 1,
 						[styles.column_2]: childrenCount === 2,
 						[styles.column_3]: childrenCount === 3,

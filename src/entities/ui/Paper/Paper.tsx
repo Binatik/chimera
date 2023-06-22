@@ -10,6 +10,7 @@ function Paper({ appearance, className, isCenterContent, children }: PaperProps)
 				[styles.paper_primary]: appearance === 'primary',
 				[styles.paper_secondary]: appearance === 'secondary',
 				[styles.paper_light]: appearance === 'light',
+				[styles.paper_blocked]: appearance === 'blocked',
 			})}>
 			{children}
 		</div>

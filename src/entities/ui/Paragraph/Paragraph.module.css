@@ -14,16 +14,20 @@
 	color: var(--white-color);
 }
 
+.paragraph_warning {
+	color: var(--info-color);
+}
+
 .paragraph_small {
 	font-size: 1rem;
 }
 
 .paragraph_medium {
-	font-size: 1.2rem;
+	font-size: 0.87rem;
 }
 
 .paragraph_large {
-	font-size: 1.5rem;
+	font-size: 1.37rem;
 }
 
 .paragraph_extra {
@@ -32,6 +36,7 @@
 
 @media (max-width: 768px) {
 	/* Стили для мобильных экранов Medium */
+
 	.paragraph_extra {
 		font-size: 4rem;
 	}
