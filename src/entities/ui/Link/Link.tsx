@@ -10,6 +10,9 @@ function Link({ href, children, appearance, className, ...props }: ILinkProps) {
 				[styles.link_primary]: appearance === 'primary',
 				[styles.link_secondary]: appearance === 'secondary',
 			})}
+			onClick={(event) =>
+				href === '' && alert('Упс, мы не смогли найти страницу пользователя.')
+			}
 			href={href}>
 			{children}
 		</a>

@@ -58,12 +58,12 @@ export const promotions = [
 			{
 				id: uui().split('-')[0],
 				leader: 'Mudya',
-				href: '#',
+				href: '',
 			},
 			{
 				id: uui().split('-')[0],
 				leader: 'Every',
-				href: '#',
+				href: '',
 			},
 		],
 	},
@@ -121,22 +121,22 @@ export const promotions = [
 			{
 				id: uui().split('-')[0],
 				leader: 'MrCmerte',
-				href: '#',
+				href: '',
 			},
 			{
 				id: uui().split('-')[0],
 				leader: 'Player60161283',
-				href: '#',
+				href: '',
 			},
 			{
 				id: uui().split('-')[0],
 				leader: 'Mudya',
-				href: '#',
+				href: '',
 			},
 			{
 				id: uui().split('-')[0],
 				leader: 'Бу!бновыйБунт@рь',
-				href: '#',
+				href: '',
 			},
 		],
 	},
