@@ -2,9 +2,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
 	gap: 0.5rem;
-	border-bottom: 1px solid #efedf6;
 }
 
 .header_logo {
