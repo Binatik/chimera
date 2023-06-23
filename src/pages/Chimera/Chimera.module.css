@@ -61,14 +61,13 @@
 }
 
 .switchboard_leader {
-	margin: 15px 0 0 0;
-	flex-wrap: wrap;
 	display: flex;
+	flex-wrap: wrap;
+	margin: calc(-0.75rem / 2) calc(-0.43rem / 2);
 }
 
 .switchboard_leader_link {
-	font-weight: 600;
-	margin-right: 0.5rem;
-	margin-top: 8px;
 	flex: 1 1 auto;
+	font-weight: 600;
+	margin: calc(0.75rem / 2) calc(0.43rem / 2);
 }

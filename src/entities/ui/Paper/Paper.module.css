@@ -1,5 +1,5 @@
 .paper {
-	border-radius: 15px;
+	border-radius: var(--border-medium);
 	min-height: 55px;
 	color: var(--white-color);
 }

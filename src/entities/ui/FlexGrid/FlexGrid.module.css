@@ -1,18 +1,14 @@
+/* Общий скилет стилей */
+
 .wrapper {
 	display: flex;
 	flex-wrap: wrap;
-	padding-bottom: 80px;
 }
 
 .column {
 	display: flex;
 	flex-wrap: wrap;
 	flex-grow: 1;
-	margin-top: 10px;
-}
-
-.column_margin {
-	margin-right: 120px;
 }
 
 .children_fill > * {
@@ -21,37 +17,49 @@
 
 @media (max-width: 768px) {
 	/* Стили для мобильных экранов Medium */
-	.column {
-		width: calc(100% / 2);
+
+	.wrapper {
+		margin: calc(-60px / 2) 0;
 	}
 
-	.column_margin {
-		margin-right: 30px;
+	.column {
+		width: calc(100% / 1);
+		padding: calc(60px / 2) 20px;
 	}
 }
 
 @media (max-width: 576px) {
 	/* Стили для мобильных экранов Small */
+
 	.column {
-		flex: 1 1 100%;
+		flex: 1 1 auto;
 	}
 }
 
 @media (min-width: 769px) {
 	/* Стили для больших экранов */
+
+	.wrapper {
+		margin: calc(-160px / 2) -120px;
+	}
+
+	.column {
+		padding: calc(160px / 2) 120px;
+	}
+
 	.column_auto {
 		flex: 1 1 auto;
 	}
 
 	.column_2 {
-		width: calc(100% / 2 - 120px);
+		width: calc(100% / 2);
 	}
 
 	.column_3 {
-		width: calc(100% / 3 - 120px);
+		width: calc(100% / 3);
 	}
 
 	.column_4 {
-		width: calc(100% / 4 - 120px);
+		width: calc(100% / 4);
 	}
 }

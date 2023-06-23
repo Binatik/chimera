@@ -24,4 +24,6 @@ body {
 
 	--container-small: 762px;
 	--container-big: 992px;
+
+	--border-medium: 10px;
 }
