@@ -3,6 +3,7 @@
 .wrapper {
 	display: flex;
 	flex-wrap: wrap;
+	margin-bottom: 100px;
 }
 
 .column {
@@ -19,12 +20,11 @@
 	/* Стили для мобильных экранов Medium */
 
 	.wrapper {
-		margin: calc(-60px / 2) 0;
+		gap: 30px;
 	}
 
 	.column {
 		width: calc(100% / 1);
-		padding: calc(60px / 2) 20px;
 	}
 }
 
@@ -40,11 +40,7 @@
 	/* Стили для больших экранов */
 
 	.wrapper {
-		margin: calc(-160px / 2) -120px;
-	}
-
-	.column {
-		padding: calc(160px / 2) 120px;
+		gap: 160px;
 	}
 
 	.column_auto {
@@ -52,14 +48,14 @@
 	}
 
 	.column_2 {
-		width: calc(100% / 2);
+		width: calc(100% / 2 - 160px);
 	}
 
 	.column_3 {
-		width: calc(100% / 3);
+		width: calc(100% / 3 - 160px);
 	}
 
 	.column_4 {
-		width: calc(100% / 4);
+		width: calc(100% / 4 - 160px);
 	}
 }

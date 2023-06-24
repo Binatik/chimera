@@ -35,11 +35,6 @@
 	display: inline-block;
 }
 
-/* .description_block_middle {
-	margin-top: 1.3rem;
-	margin-bottom: 1.3rem;
-} */
-
 .switchboard_text_middle {
 	margin-top: 1.3rem;
 	margin-bottom: 1.3rem;
@@ -65,7 +60,7 @@
 }
 
 .switchboard_leader_link {
-	flex: 1 1 auto;
+	flex-grow: 0.5;
 	font-weight: 600;
 	margin: calc(0.75rem / 2) calc(0.43rem / 2);
 }
