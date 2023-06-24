@@ -7,53 +7,12 @@ import { Countdown, Switchboard } from '../../features/components'
 import classNames from 'classnames'
 import styles from './Chimera.module.css'
 import { Link } from '../../entities/ui/Link/Link'
-import { v4 as uui } from 'uuid'
 import React from 'react'
 import { Description, promotions } from '../../app/models/promotions'
 
 const tabList: ITab[] = [
 	{ id: 1, title: 'Акции', picture: 'picture1.png' },
 	{ id: 2, title: 'Правила', picture: 'picture2.png' },
-]
-
-const stocks: IStock[] = [
-	{
-		id: 1,
-		title: 'Охота за легендарной пешкой.',
-		description: `Улучше одну легендарную пешку и получи 30 алмазов.`,
-		type: 'D',
-		victorsList: [],
-		timerIsoEndEvent: '2023-04-25',
-	},
-	{
-		id: 2,
-		title: 'Cкоростя на максимум.',
-		description: `Участвуй в турнире и набери максимальное количество очков,
-		играя тапки как можно больше. Двое самых быстрых участников
-		будут награждены.`,
-		type: 'S',
-		victorsList: ['Mudya', 'Every'],
-		timerIsoEndEvent: '2023-05-07',
-	},
-	{
-		id: 3,
-		title: 'Время в спять.',
-		description: `Прими участие в событии, получи пешку этого события и верни себе 50 платины.`,
-		type: 'S',
-		victorsList: ['MrCmerte', 'Player60161283', 'Mudya', 'Бу!бновыйБунт@рь'],
-		timerIsoEndEvent: '2023-05-19',
-		explanation: true,
-	},
-	{
-		id: 4,
-		title: 'Гонка со своими.',
-		description: `Прими участие в событии, получи пешку этого события и верни себе 50 платины. 
-		Первые два победителя получают награду сразу, третий будет выбран случайным образом среди всех остальных.`,
-		type: 'S',
-		victorsList: [],
-		timerIsoEndEvent: '2023-06-24',
-		explanation: true,
-	},
 ]
 
 const reversePromotions = [...promotions.reverse()]
@@ -83,7 +42,6 @@ function Chimera() {
 				</Paper>
 			</section>
 			<div className={classNames(styles.tabbed_container)}>
-				{/* <div className={classNames(styles.tabbed_content)}> */}
 				<Switchboard
 					id={tabIdMenu}
 					content={[
