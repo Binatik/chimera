@@ -14,8 +14,7 @@
 
 .paper_primary {
 	background: var(--primary-color);
-	box-shadow: 0px 10px 50px -13px rgba(49, 35, 92, 1),
-		0px -8px 12px -4px rgba(255, 255, 255, 0.54) inset;
+	box-shadow: 0px 4px 34px 0px rgba(113, 61, 221, 0.5);
 }
 
 .paper_secondary {

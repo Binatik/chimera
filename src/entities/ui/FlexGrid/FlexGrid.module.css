@@ -3,13 +3,14 @@
 .wrapper {
 	display: flex;
 	flex-wrap: wrap;
-	margin-bottom: 100px;
 }
 
 .column {
+	position: relative;
 	display: flex;
 	flex-wrap: wrap;
 	flex-grow: 1;
+	z-index: 3;
 }
 
 .children_fill > * {

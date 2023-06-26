@@ -1,6 +1,7 @@
 .header {
+	user-select: none;
 	display: flex;
-	justify-content: center;
+	transform: translateY(50px);
 	align-items: center;
 	gap: 0.5rem;
 }
@@ -11,12 +12,12 @@
 
 .tabbed_container {
 	max-width: var(--container-big);
-	margin: 2.5rem auto 0;
+	margin: 1rem auto 0;
 	padding: 0 15px;
 }
 
 .tabbed_menu {
-	padding: 0 1rem 3rem;
+	padding: 15px 0;
 }
 
 .tabbed_item {
@@ -27,6 +28,10 @@
 .switchboard_item {
 	flex-grow: 1;
 	align-self: flex-end;
+}
+
+.switchboard_item__top {
+	margin-top: 100px;
 }
 
 .description_block {
@@ -63,4 +68,22 @@
 	flex-grow: 0.5;
 	font-weight: 600;
 	margin: calc(0.75rem / 2) calc(0.43rem / 2);
+}
+
+@media (max-width: 768px) {
+	/* Стили для мобильных экранов Medium */
+	.header {
+		align-items: center;
+	}
+}
+
+@media (max-width: 576px) {
+	/* Стили для мобильных экранов Small */
+}
+
+@media (min-width: 769px) {
+	/* Стили для больших экранов */
+	.header {
+		justify-content: center;
+	}
 }

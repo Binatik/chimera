@@ -1,45 +1,36 @@
 .button {
 	font-family: 'Mont', sans-serif;
+	border-radius: var(--border-medium);
+	color: var(--white-color);
 	font-weight: 600;
-	cursor: pointer;
 	display: inline-block;
 	font-size: 16px;
 	background: none;
 	border: none;
-	transition: background 0.1s, box-shadow 0.1s;
+	padding: 12px 50px;
+	transition: background 0.2s;
 }
 
 .button_primary {
+	cursor: pointer;
 	color: var(--white-color);
-	padding: 50px 15px 20px 15px;
-	margin-right: 3px;
-	border-radius: 0 0 15px 15px;
 }
 
-.button_primary:last-child {
-	margin: 0;
-}
-
-.button_primary:hover {
+.button_primary_active {
 	background: var(--inline-color);
-	box-shadow: 0px 10px 50px -13px rgba(110, 63, 255, 1),
-		0px -8px 12px -4px rgba(255, 255, 255, 0.54) inset;
+	box-shadow: 0px 4px 34px 0px rgba(113, 61, 221, 0.5);
 }
 
-.button.button_disabled {
-	cursor: default;
-	background: var(--inline-color);
-	box-shadow: 0px 10px 50px -13px rgba(110, 63, 255, 1),
-		0px -8px 12px -4px rgba(255, 255, 255, 0.54) inset;
+@media (hover: hover) {
+	.button_primary:hover {
+		background: #9a78e1;
+		box-shadow: 0px 4px 34px 0px rgba(113, 61, 221, 0.5);
+	}
 }
 
-@media (max-width: 768px) {
-	/* Стили для мобильных экранов Medium */
-	.button.button_disabled {
-		cursor: default;
+@media (hover: none) {
+	.button_primary:active {
 		background: var(--inline-color);
-		box-shadow: 0px 10px 50px -13px rgba(110, 63, 255, 1),
-			0px -8px 12px -4px rgba(255, 255, 255, 0.54) inset;
-		border-radius: 15px;
+		box-shadow: 0px 4px 34px 0px rgba(113, 61, 221, 0.5);
 	}
 }

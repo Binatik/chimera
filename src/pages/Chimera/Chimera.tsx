@@ -1,9 +1,9 @@
-import { Button, FlexGrid, Heading, Paper, Paragraph } from '../../entities/ui'
+import { FlexGrid, Heading, Paper, Paragraph } from '../../entities/ui'
 import chimera from '../../assets/chimera.png'
-import type { IStock, ITab } from '../../app/types'
+import type { ITab } from '../../app/types'
 import { Tabs } from '../../widget/components'
 import { useState } from 'react'
-import { Countdown, Switchboard } from '../../features/components'
+import { Copy, Countdown, Switchboard } from '../../features/components'
 import classNames from 'classnames'
 import styles from './Chimera.module.css'
 import { Link } from '../../entities/ui/Link/Link'
@@ -14,6 +14,8 @@ const tabList: ITab[] = [
 	{ id: 1, title: 'Акции', picture: 'picture1.png' },
 	{ id: 2, title: 'Правила', picture: 'picture2.png' },
 ]
+
+const clanId = '596597'
 
 const reversePromotions = [...promotions.reverse()]
 
@@ -27,8 +29,12 @@ function Chimera() {
 					Chimera
 				</Heading>
 				<Paragraph size="small" appearance="secondary">
-					596597
+					{clanId}
 				</Paragraph>
+				<Copy
+					message={clanId}
+					answer="Вы скопировали ID клана. Его необходимо вставить в самой игре когда ищите клан."
+				/>
 			</div>
 			<section className={classNames(styles.tabbed_container)}>
 				<Paper className={styles.tabbed_menu} appearance="primary">
@@ -47,7 +53,11 @@ function Chimera() {
 					content={[
 						reversePromotions.map((promotion) => (
 							<FlexGrid key={promotion.id} margin="medium" childrenFill={false}>
-								<div className={styles.switchboard_item}>
+								<div
+									className={classNames(
+										styles.switchboard_item,
+										styles.switchboard_item__top
+									)}>
 									<Heading appearance="primary" size="medium" tag="h2">
 										{promotion.title}
 									</Heading>
