@@ -27,7 +27,7 @@
 }
 
 .paragraph_large {
-	font-size: 1.37rem;
+	font-size: 1.1rem;
 }
 
 .paragraph_extra {
@@ -36,6 +36,10 @@
 
 @media (max-width: 768px) {
 	/* Стили для мобильных экранов Medium */
+
+	.paragraph_large {
+		font-size: 0.87rem;
+	}
 
 	.paragraph_extra {
 		font-size: 4rem;

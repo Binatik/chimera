@@ -9,6 +9,7 @@ import styles from './Chimera.module.css'
 import { Link } from '../../entities/ui/Link/Link'
 import React from 'react'
 import { Description, promotions } from '../../app/models/promotions'
+import { modules } from '../../app/models/rules'
 
 const tabList: ITab[] = [
 	{ id: 1, title: 'Акции', picture: 'picture1.png' },
@@ -126,6 +127,33 @@ function Chimera() {
 									</div>
 								</div>
 							</FlexGrid>
+						)),
+						modules.map((module) => (
+							<React.Fragment key={module.id}>
+								<Heading
+									appearance="primary"
+									size="medium"
+									tag="h2"
+									className={styles.rule_title}>
+									{module.title}
+								</Heading>
+								{module.rules.map((rule) => (
+									<Paper
+										className={styles.rule_content}
+										key={rule.id}
+										appearance="light">
+										<Paragraph appearance="secondary" size="large">
+											{rule.description}
+										</Paragraph>
+
+										{rule.warn && (
+											<Paragraph appearance="warning" size="large">
+												{rule.warn}
+											</Paragraph>
+										)}
+									</Paper>
+								))}
+							</React.Fragment>
 						)),
 					]}
 				/>

@@ -70,6 +70,14 @@
 	margin: calc(0.75rem / 2) calc(0.43rem / 2);
 }
 
+.rule_title {
+	margin: 50px 0 0.31rem 0;
+}
+
+.rule_content {
+	margin-bottom: 10px;
+}
+
 @media (max-width: 768px) {
 	/* Стили для мобильных экранов Medium */
 	.header {
